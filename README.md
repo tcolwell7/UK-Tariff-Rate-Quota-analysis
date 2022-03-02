@@ -8,9 +8,15 @@ Initial analysis following publication of two public UK TRQ data sources compare
 
 ### Objectives
 
-The data is to be broken down into groupings, defined by stakeholder interest. Any output is presented across each region. A secondary purpose of this work is to automate repetitive processes to improve efficiency working across a multi-disciplinary team. 
+Produce Tariff Rate Quota data and utilisation rates across UK partner country groupings. The data is to broken down into groupings, defined by stakeholder interest depending on the geographical location of countries which the UK has Free TRade Agreements with. Any output is presented across each region. A secondary purpose of this work is to automate repetitive processes to improve efficiency working across a multi-disciplinary team. 
 
-User centred functions have been created for the purpose of analytical outputs to be presented to non-analysts using MS applications. They are designed so users can tailer their charts depnding on what story the data is highlgihting. 
+Multiple reports are to be generated using the data produced. Effort has been made to provide the means to multiple people to work on the data and prdocue outputs in a RAP way. 
+
+User centred functions have been created for the purpose of analytical outputs to be presented to non-analysts using MS applications. They are designed so users can tailer their charts depnding on what story the data is highlgihting. R users with little to intermeidate expereince are able to help produce visual outputs. 
+
+### Outputs 
+
+tbc
 
 ### Analysis is split into:
 
