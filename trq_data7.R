@@ -223,7 +223,7 @@ sectorFunction <- function(.df, .colname, .delim){
 }
 
 # TRQ LEVEL FILL RATES---------------------------------------------------------
-# 0. Clean data -----------
+# 0. Clean data ------------------------------------
 
 #' Combine  both quota data sources together for UK TRQs. 
 #' Clean strings and change quota name for EU TRQ data. 
@@ -361,7 +361,7 @@ eu_trq <-
   )
   
 
-## 1. UK TRQ data ----
+## 1. UK TRQ data ----------------------------------------
 
 #'
 #'  Compile different level data for RSPs: 
@@ -377,7 +377,7 @@ uk_list <- list() # create list for function
 # filter for KG only:
 uk_trq_data <- uk_aggFunction(uk_trq) # apply aggregation function to cleaned/combined UK quota data. 
 
-### 1i. Bind UK data --------
+### 1i. Bind UK data ------------------------------
 
 ## bind together group datasets. 
 trqs_region_uk <- bind_rows(uk_trq_data[grepl("region", names(uk_trq_data))])
@@ -402,7 +402,7 @@ trqs_grouping_uk <-
 #save(trqs_country, trqs_grouping, trqs_region, file = "..\\data\\uk_trq_data.RData")
 
 
-## 2. EU TRQ data -----
+## 2. EU TRQ data --------------------------------------
 
 
 eu_list <- list() # create list for function
@@ -410,7 +410,7 @@ eu_trq_data <- eu_aggFunction(eu_trq) # apply aggregation function to EU trq dat
 
 
 
-### 2i. Bind EU data ------
+### 2i. Bind EU data ------------------------------
 trqs_region_eu <- bind_rows(eu_trq_data[grepl("region", names(eu_trq_data))])
 country_eu     <- bind_rows(eu_trq_data[grepl("origin", names(eu_trq_data))])
 grouping_eu    <- bind_rows(eu_trq_data[grepl("grouping", names(eu_trq_data))])
@@ -437,7 +437,7 @@ trqs_grouping_eu <-
 #save(trqs_country_eu, trqs_grouping_eu, trqs_region_eu, file = "..\\data\\eu_trq_data.RData")
 
 
-## 3. Combine UK and EU data ----
+## 3. Combine UK and EU data --------------------------------------
 
 ## need to remove two columns from uk data to bind together for matching df.
 
@@ -472,7 +472,7 @@ trqs_region   <- rbind(trqs_region_uk,trqs_region_eu) %>%
 #save(trqs_country, trqs_grouping, trqs_region, file = "..\\data\\trq_data6.RData")
 
 
-## 4. Excel output -----
+## 4. Excel output --------------------------------------------------------
 
 wb3 <- createWorkbook()
 
@@ -499,7 +499,7 @@ setColWidths(wb3, "region_level", cols = c(2:ncol(trqs_region)), widths =  15)
 
 saveWorkbook(wb3, file = "..\\outputs\\trq_data_output7.xlsx", overwrite = T)
 
-## 5. TRQ filled quotas --------
+## 5. TRQ filled quotas ---------------------------------------------------
 
 uk_trq4 <- uk_trq %>% 
   mutate(
@@ -532,7 +532,7 @@ uk_trqs_filled <- uk_trq4 %>%
 
 write.xlsx(uk_trqs_filled, "..\\outputs\\uk_trqs_filled7.xlsx", overwrite = T)
 
-## 6. Save Rdata (all dfs) ----
+## 6. Save Rdata (all dfs) ----------------------------------
 
 #save(trqs_country, trqs_grouping, trqs_region, uk_trqs_filled, file = "..\\data\\trq_data6.RData")
 
@@ -553,7 +553,7 @@ write.xlsx(uk_trqs_filled, "..\\outputs\\uk_trqs_filled7.xlsx", overwrite = T)
 
 
 list <- list() # list for duplicate quotas. 
-## 1. Extract sector data -------
+## 1. Extract sector data -----------------------------------------
 
 # Apply sector function to UK and EU data:
 
@@ -582,14 +582,14 @@ eu_trq_sector <- eu_trq_sector %>%
   mutate(trq_dsc = ifelse(is.na(trq_dsc), manual_trq_dsc, trq_dsc))
 
 
-## 2. Aggregate UK/EU sector data ----------------------
+## 2. Aggregate UK/EU sector data -----------------------------
 
 #'
 #' Aggregate TRQ data by country/region grouping breaking down sector level fill rates. 
 #' Apply aggregation functions
 #'
 
-### 2.1 UK data -----------
+### 2.1 UK data -----------------------------------------------
 
 sectors_uk <- uk_aggFunction(uk_trq_sector, .grouping = "trq_dsc")
 
@@ -613,7 +613,7 @@ sectors_grouping_uk <-
   arrange(region)
 
 
-### 2.2 EU data -----------
+### 2.2 EU data ------------------------------------------------------
 
 
 sectors_eu <- eu_aggFunction(eu_trq_sector, .grouping = "trq_dsc")
@@ -642,7 +642,7 @@ sectors_grouping_eu <-
   
 
 
-## 3. Combine UK/EU data ---------
+## 3. Combine UK/EU data -------------------------------------------
 
 # remove remaining balance columns from UK data to bind together with EU data:
 
@@ -669,7 +669,7 @@ sectors_country <-
   arrange(region,grouping,quota_origin, trq_dsc, quota_unit_final)
   
 
-## 4. Excel output -------
+## 4. Excel output ----------------------------------------------------------
 
 
 wb2 <- createWorkbook()
@@ -697,7 +697,7 @@ setColWidths(wb2, "region_level", cols = c(2:ncol(sectors_region)), widths =  15
 
 saveWorkbook(wb2, file = "..\\outputs\\trq_sector_data_output7.xlsx", overwrite = T)
 
-## 5. Sector filled quotas --------------
+## 5. Sector filled quotas -----------------------------------------------------------
 
 uk_trq_sector2 <- uk_trq_sector %>% 
   mutate(
@@ -727,13 +727,13 @@ uk_trqs_filled_sector <- uk_trq_sector2 %>%
 
 write.xlsx(uk_trqs_filled_sector, "..\\outputs\\uk_trqs_filled_sector7.xlsx", overwrite = T)
 
-## 6. Save Rdata (all dfs) -------------
+## 6. Save Rdata (all dfs) ----------------------------------------------------
 
 save(trqs_country, trqs_grouping, trqs_region, uk_trqs_filled, 
      sectors_country, sectors_grouping, sectors_region, uk_trqs_filled_sector,
      file = "..\\data\\trq_data_all7.RData")
 
-### 6.1. Full UK TRQ data excel -----
+### 6.1. Full UK TRQ data excel ---------------------------------------
 
 uk_trq_sector3 <- uk_trq_sector2 %>% 
   select(-tonne_flag, - hl_flag) %>%
@@ -742,7 +742,7 @@ uk_trq_sector3 <- uk_trq_sector2 %>%
 write.xlsx(uk_trq_sector3,"..\\outputs\\uk_trq_data_full.xlsx", overwrite = TRUE)
 
 
-### 6.2 Full EU TRQ data excel ----
+### 6.2 Full EU TRQ data excel ----------------------------------------
 
 
 eu_trq_sector2 <- eu_trq_sector %>% 
@@ -753,4 +753,4 @@ eu_trq_sector2 <- eu_trq_sector %>%
 write.xlsx(eu_trq_sector2,"..\\outputs\\eu_trq_data_full.xlsx", overwrite = TRUE)
 
 
-
+# end
