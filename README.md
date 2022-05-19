@@ -28,7 +28,7 @@ There are four main output excel files covering different TRQ metrics. These are
 6. tbc. Markdown 
 
 
-Scripts:
+**Scripts:**
 
 1. **trq_data10** - TRQ data compilation script. Data cleaning, wrangling and aggregations to create data outputs to be used for further dissmeniation and analysis. 
 2. **trq_chartFunctions** - user-centred R visualisation functions. Functions created for users to create charts in R with little to no R knowledge. Automatic testing built within functions. 
@@ -37,8 +37,4 @@ Scripts:
 5. **app.R** - shiny App devleoped to disseminate the UK TRQ data across multiple metrics. 
 
 
-```R
 
-df <- df %>%
-
-```
