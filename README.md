@@ -35,6 +35,6 @@ There are four main output excel files covering different TRQ metrics. These are
 3. **trqCharts.R** - example script for users. Function descriptions and exmaples provided for users utilising functions. 
 4. **uk_trqs_web_scrape.R** - webscrape of public UK license quota data. Output is used in trq data compilation. 
 5. **app.R** - shiny App devleoped to disseminate the UK TRQ data across multiple metrics. 
-
+6. **uk_trq_qa.ipynb** juypter notebook for quality assurance of the trq_data compilation. Alternative method to compile data as a check against the R script. 
 
 
