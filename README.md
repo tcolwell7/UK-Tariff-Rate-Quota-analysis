@@ -16,7 +16,7 @@ User centred functions have been created for the purpose of analytical outputs t
 
 ### Outputs 
 
-tbc
+There are four main output excel files covering different TRQ metrics. These are the outputs created from the main trq_data compilation script. The Web-scrpae output can be found in the web-scrape folder. Outputs and chartFunctions were shared across multiple analytical teams to be compiled and analysed in reports. These reports were to be shared across the orgnisation. 
 
 ### Analysis is split into:
 
@@ -24,8 +24,17 @@ tbc
 2. Data aggregations and outputs
 3. TRQ visualisaiton functions
 4. TRQ test script for user functions
-5. tbc. Markdown 
-6. tbc.
+5. Shiny App to disseminate compiled data
+6. tbc. Markdown 
+
 
 Scripts:
+
+1. **trq_data10** - TRQ data compilation script. Data cleaning, wrangling and aggregations to create data outputs to be used for further dissmeniation and analysis. 
+2. **trq_chartFunctions** - user-centred R visualisation functions. Functions created for users to create charts in R with little to no R knowledge. Automatic testing built within functions. 
+3. **trqCharts** - example script for users. Function descriptions and exmaples provided for users utilising functions. 
+4. **uk_trqs_web_scrape** - webscrape of public UK license quota data. Output is used in trq data compilation. 
+5. **app.R** - shiny App devleoped to disseminate the UK TRQ data across multiple metrics. 
+
+
 
