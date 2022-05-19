@@ -30,10 +30,10 @@ There are four main output excel files covering different TRQ metrics. These are
 
 **Scripts:**
 
-1. **trq_data10** - TRQ data compilation script. Data cleaning, wrangling and aggregations to create data outputs to be used for further dissmeniation and analysis. 
-2. **trq_chartFunctions** - user-centred R visualisation functions. Functions created for users to create charts in R with little to no R knowledge. Automatic testing built within functions. 
-3. **trqCharts** - example script for users. Function descriptions and exmaples provided for users utilising functions. 
-4. **uk_trqs_web_scrape** - webscrape of public UK license quota data. Output is used in trq data compilation. 
+1. **trq_data10.R** - TRQ data compilation script. Data cleaning, wrangling and aggregations to create data outputs to be used for further dissmeniation and analysis. 
+2. **trq_chartFunctions.R** - user-centred R visualisation functions. Functions created for users to create charts in R with little to no R knowledge. Automatic testing built within functions. 
+3. **trqCharts.R** - example script for users. Function descriptions and exmaples provided for users utilising functions. 
+4. **uk_trqs_web_scrape.R** - webscrape of public UK license quota data. Output is used in trq data compilation. 
 5. **app.R** - shiny App devleoped to disseminate the UK TRQ data across multiple metrics. 
 
 
