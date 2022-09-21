@@ -1,0 +1,29 @@
+---
+title: "TRQ tab guidance."
+output: word_document
+  #word_document:
+   # reference_docx: "template.docx"
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+# Tab info
+The data shows historical and live TRQs for 2021 and 2022 quota years. If there are any data issues or anomalies. 
+
+### Data sources
+Individual UK quota data can be searched for at: [https://www.trade-tariff.service.gov.uk/quota_search](https://www.trade-tariff.service.gov.uk/quota_search)
+
+Licensed quota data is currently maintained by the Rural Payments Agency. Individual quota data can be searched for at: [http://www.gov.uk/government/collections/uk-tariff-rate-quotas-allocation-of-co-efficients](http://www.gov.uk/government/collections/uk-tariff-rate-quotas-allocation-of-co-efficients)
+
+### Use of dashboard tab:
+You can filter the data table using the Select Input dropdown on the left hand side or type in the boxes within the data table. Both selection by partner country and trq dropdowns work on this page for all visuals. 
+Full data of first come first serve and license quotas can be downloaded using "Download all UK TRQ data" button at the bottom of the page.
+
+# Tab navigation
+Having made your country or agreement selection from the left-hand-side dropdowns, in the TRQ page you have further options to drill-down into the TRQ data. Users can select which type of quota and sector to filter visualisations by. 
+
